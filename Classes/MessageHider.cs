@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace simple_steganography.Classes
 {
-    public class MessageHide
+    public class MessageHider
     {
         public static Bitmap HideMessage(Bitmap bitmap, string message)
         {
@@ -25,7 +25,7 @@ namespace simple_steganography.Classes
             }
 
             // Convert the message to a binary string
-            string binaryMessage = StringToBinary.stringToBinary(message);
+            string binaryMessage = StringBinaryConverter.stringToBinary(message);
 
             // Get dimensions of the image
             int width = bitmap.Width;
@@ -43,7 +43,7 @@ namespace simple_steganography.Classes
 
                     if (messageIndex < binaryMessage.Length)
                     {
-                        int newR = SetLeastSignificantBit.setLeastSignificantBit(pixel.R, binaryMessage[messageIndex++]);
+                        int newR = LeastSignificantBitSetter.setLeastSignificantBit(pixel.R, binaryMessage[messageIndex++]);
                         int newG = pixel.G;
                         int newB = pixel.B;
 

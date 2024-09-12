@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace simple_steganography.Classes
 {
-    internal class SetLeastSignificantBit
+    internal class LeastSignificantBitSetter
     {
         public static int setLeastSignificantBit(int colorValue, char bit)
         {

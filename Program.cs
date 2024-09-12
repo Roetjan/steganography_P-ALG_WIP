@@ -35,13 +35,13 @@ namespace simple_steganography
             var message = Convert.ToString(Console.ReadLine());
 
             // Embed the message into the image
-            var hiddenTextBmp = MessageHide.HideMessage(bitmap, message);
+            var hiddenTextBmp = MessageHider.HideMessage(bitmap, message);
             hiddenTextBmp.Save(outputPath, ImageFormat.Png);
             Console.WriteLine($"Converted image saved to {outputPath}");
 
             // Extract the message from the saved image
             Bitmap outputBitmap = new(outputPath);
-            string extractedMessage = MessageExtract.ExtractMessage(outputBitmap, message.Length);
+            string extractedMessage = MessageExtracter.ExtractMessage(outputBitmap, message.Length);
             Console.WriteLine($"Extracted Hidden message: {extractedMessage}");
         }
     }

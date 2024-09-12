@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace simple_steganography.Classes
 {
-    public static class StringToBinary
+    public static class StringBinaryConverter
     {
         public static string stringToBinary(string data)
         {

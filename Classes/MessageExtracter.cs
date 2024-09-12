@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace simple_steganography.Classes
 {
-    internal class MessageExtract
+    internal class MessageExtracter
     {
         public static string ExtractMessage(Bitmap bitmap, int messageLength)
         {
@@ -46,7 +46,7 @@ namespace simple_steganography.Classes
             }
 
             // Convert binary message back to a string
-            string message = ConvertBinaryString.BinaryToString(binaryString);
+            string message = BinaryStringConverter.BinaryToString(binaryString);
             return message;
         }
 
